@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Explore Manipur – Interactive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark home-page">
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            EXPLORE MANIPUR
+            <span>Culture • Cuisine • Journeys</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="culture.html">Culture</a></li>
+            <li><a href="cuisine.html">Cuisine</a></li>
+            <li><a href="places.html">Places</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="interactive.html" class="active">FAQ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <header class="section-header">
+            <h1 class="section-title">Interactive Corner</h1>
+            <p class="section-subtitle">
+                A small quiz and a simple festival calendar to help you remember more than just names.
+            </p>
+        </header>
+
+        <div class="quiz-container">
+            <h2 style="margin-bottom: 0.7rem; font-size: 1.2rem;">How well do you know Manipur?</h2>
+
+            <div class="quiz-question">
+                <h4>1. Which lake in Manipur is famous for its floating phumdis?</h4>
+                <ul class="quiz-options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="loktak">
+                            Loktak Lake
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="dal">
+                            Dal Lake
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="chilika">
+                            Chilika Lake
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="quiz-question">
+                <h4>2. Ras Leela is a classical dance form from Manipur based on the story of:</h4>
+                <ul class="quiz-options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="ramsita">
+                            Ram and Sita
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="rasleela">
+                            Radha and Krishna
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="shivparvati">
+                            Shiva and Parvati
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="quiz-question">
+                <h4>3. The endangered state animal of Manipur, also found in Keibul Lamjao National Park, is:</h4>
+                <ul class="quiz-options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="sangai">
+                            Sangai (brow-antlered deer)
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="rhino">
+                            One-horned Rhino
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="snowleopard">
+                            Snow Leopard
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="quiz-actions">
+                <button id="quiz-submit" class="btn-primary" type="button">Check answers</button>
+                <span id="quiz-result"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <header class="section-header">
+            <h2 class="section-title">Festival Calendar Snapshot</h2>
+            <p class="section-subtitle">
+                Click on a month to see one key festival or cultural highlight.
+            </p>
+        </header>
+
+        <div class="card">
+            <div class="month-grid">
+                <button class="month-chip" data-month="jan" type="button">Jan</button>
+                <button class="month-chip" data-month="feb" type="button">Feb</button>
+                <button class="month-chip" data-month="mar" type="button">Mar</button>
+                <button class="month-chip" data-month="apr" type="button">Apr</button>
+                <button class="month-chip" data-month="may" type="button">May</button>
+                <button class="month-chip" data-month="nov" type="button">Nov</button>
+            </div>
+            <p id="month-info" style="margin-top: 0.8rem; font-size: 0.9rem;">
+                Select a month to see a short note. You can customise this with more details for your project.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    Interactive page – quiz + mini festival calendar to make the site feel more alive.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
