@@ -78,8 +78,22 @@
       var hb = hdr.getBoundingClientRect();
       var he = document.elementFromPoint(4, hb.top + hb.height / 2);
       body.classList.toggle('hdr-light', !!(he && he.closest('.light, .warm')));
+      // phones: the header gets the colour of the surface under it, so it never sits over text
+      var surf = he && he.closest('.light, .warm, .dark, .ph, .site-footer');
+      var bg = surf ? getComputedStyle(surf).backgroundColor : '';
+      if (!bg || bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)') bg = '#2b1a2b';
+      hdr.style.setProperty('--hdr-bg', bg);
     }
+    // phones: header and dock slide away while scrolling down and come back on the way up
+    var y = window.scrollY || 0;
+    if (!body.classList.contains('menu-open')) {
+      if (y > lastY + 6 && y > 140) body.classList.add('chrome-hide');
+      else if (y < lastY - 6 || y <= 140) body.classList.remove('chrome-hide');
+    }
+    body.classList.toggle('scrolled', y > 8);
+    lastY = y;
   }
+  var lastY = window.scrollY || 0;
   function queueDock() { if (!dockTick) { dockTick = true; requestAnimationFrame(checkDock); } }
   window.addEventListener('scroll', queueDock, { passive: true });
   window.addEventListener('resize', queueDock);

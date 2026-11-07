@@ -40,7 +40,7 @@
   var mapEl = $('#map');
   if (mapEl && window.L) {
     try {
-      var map = L.map(mapEl, { scrollWheelZoom: false, zoomControl: true, attributionControl: true }).setView([24.85, 94.0], 9);
+      var map = L.map(mapEl, { dragging: !L.Browser.mobile, tap: false, scrollWheelZoom: false, zoomControl: true, attributionControl: true }).setView([24.85, 94.0], 9);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 16, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
