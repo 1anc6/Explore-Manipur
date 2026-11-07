@@ -13,7 +13,13 @@
   if (!EM.hasGSAP) root.classList.add('no-gsap');
 
   /* ---------------- smooth scroll ---------------- */
-  if (!reduce && !navigator.webdriver && typeof window.Lenis !== 'undefined') {
+  // Overlays and inner scrollers keep their own native scrolling, even while Lenis is stopped.
+  document.querySelectorAll('.lb, .lb-body, .menu, .map-list').forEach(function (n) { n.setAttribute('data-lenis-prevent', ''); });
+  // Smooth scrolling only for mouse/trackpad. Phones and tablets keep native momentum scrolling,
+  // which is faster and never fights the finger.
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (hasGSAP) ScrollTrigger.config({ ignoreMobileResize: true });
+  if (!reduce && finePointer && !navigator.webdriver && typeof window.Lenis !== 'undefined') {
     try {
       EM.lenis = new window.Lenis({ duration: 1.15, smoothWheel: true });
       if (hasGSAP) {
@@ -31,7 +37,8 @@
     else if (typeof target === 'number') window.scrollTo({ top: target, behavior: reduce ? 'auto' : 'smooth' });
     else target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
   };
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  // [data-lb] tiles also use #ids, but they open the details panel instead of scrolling the page
+  document.querySelectorAll('a[href^="#"]:not([data-lb])').forEach(function (a) {
     a.addEventListener('click', function (e) {
       var id = a.getAttribute('href');
       if (id.length < 2) return;
@@ -53,6 +60,7 @@
     menuBtn.setAttribute('aria-expanded', String(open));
     menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     menu.setAttribute('aria-hidden', String(!open));
+    root.classList.toggle('scroll-lock', open);
     if (EM.lenis) open ? EM.lenis.stop() : EM.lenis.start();
     if (open && viaKeyboard) setTimeout(function () { var f = menu.querySelector('a'); if (f) f.focus({ preventScroll: true }); }, 400);
   }
@@ -64,25 +72,30 @@
 
   /* ---------------- dock contrast ---------------- */
   var dock = document.querySelector('.dock');
-  var dockTick = false;
+  var hdr = document.querySelector('.site-header');
+  var dockTick = false, lastSurf = null;
+  // Probe points sit just outside the dock and in the header's left gutter, so no element needs
+  // its pointer-events toggled (that forced a style recalc on every scroll frame).
   function checkDock() {
     dockTick = false;
     if (!dock) return;
+    if (body.classList.contains('menu-open') || root.classList.contains('scroll-lock')) return;
     var r = dock.getBoundingClientRect();
-    dock.style.pointerEvents = 'none';
     var el = document.elementFromPoint(Math.max(2, r.left - 4), r.top + r.height / 2);
-    dock.style.pointerEvents = '';
     body.classList.toggle('on-light', !!(el && el.closest('.light, .warm')));
-    var hdr = document.querySelector('.site-header');
     if (hdr) {
       var hb = hdr.getBoundingClientRect();
-      var he = document.elementFromPoint(4, hb.top + hb.height / 2);
+      var he = document.elementFromPoint(4, Math.max(hb.bottom, 2) - 2);
+      if (he && hdr.contains(he)) he = null;
       body.classList.toggle('hdr-light', !!(he && he.closest('.light, .warm')));
       // phones: the header gets the colour of the surface under it, so it never sits over text
       var surf = he && he.closest('.light, .warm, .dark, .ph, .site-footer');
-      var bg = surf ? getComputedStyle(surf).backgroundColor : '';
-      if (!bg || bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)') bg = '#2b1a2b';
-      hdr.style.setProperty('--hdr-bg', bg);
+      if (surf !== lastSurf) {
+        lastSurf = surf;
+        var bg = surf ? getComputedStyle(surf).backgroundColor : '';
+        if (!bg || bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)') bg = '#2b1a2b';
+        hdr.style.setProperty('--hdr-bg', bg);
+      }
     }
     // phones: header and dock slide away while scrolling down and come back on the way up
     var y = window.scrollY || 0;
@@ -200,11 +213,15 @@
     var idx = 0, lastFocus = null;
     var lImg = lb.querySelector('img'), lTitle = lb.querySelector('h2'), lMeta = lb.querySelector('.meta'),
         lText = lb.querySelector('.lb-text'), lDl = lb.querySelector('dl'), lLink = lb.querySelector('.lb-link');
+    var lBody = lb.querySelector('.lb-body');
+    var small = window.matchMedia('(max-width: 900px)');
     var visible = function () { return items.filter(function (i) { return !i.hidden; }); };
     var show = function (it) {
-      var d = it.dataset;
-      lImg.src = d.full || it.querySelector('img').src;
-      lImg.alt = it.querySelector('img').alt;
+      var d = it.dataset, ti = it.querySelector('img');
+      // phones reuse the photo the tile already downloaded instead of fetching the 1920px original
+      lImg.src = small.matches ? (ti.currentSrc || ti.src) : (d.full || ti.currentSrc || ti.src);
+      lImg.alt = ti.alt;
+      if (lBody) lBody.scrollTop = 0;
       lTitle.textContent = d.title || it.querySelector('h3').textContent;
       lMeta.textContent = d.meta || '';
       lText.innerHTML = d.text || '';
@@ -224,13 +241,14 @@
       show(it);
       lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
       if (EM.lenis) EM.lenis.stop();
-      body.style.overflow = 'hidden';
-      setTimeout(function () { lb.querySelector('.lb-close').focus(); }, 50);
+      root.classList.add('scroll-lock');
+      setTimeout(function () { lb.querySelector('.lb-close').focus({ preventScroll: true }); }, 50);
     };
     var close = function () {
+      if (!lb.classList.contains('open')) return;
       lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
+      root.classList.remove('scroll-lock');
       if (EM.lenis) EM.lenis.start();
-      body.style.overflow = '';
       if (lastFocus) lastFocus.focus({ preventScroll: true });
     };
     var go = function (d) { var v = visible(); idx = (idx + d + v.length) % v.length; show(v[idx]); };
@@ -343,10 +361,14 @@
   });
 
   /* ---------- reveal pictures ---------- */
+  // touch screens get a one-shot reveal: a scrubbed clip-path repaints the photo on every scroll frame
   document.querySelectorAll('[data-reveal]').forEach(function (f) {
-    gsap.fromTo(f, { clipPath: 'inset(12% 12% 12% 12%)' }, {
+    gsap.fromTo(f, { clipPath: 'inset(12% 12% 12% 12%)' }, finePointer ? {
       clipPath: 'inset(0% 0% 0% 0%)', ease: 'none',
       scrollTrigger: { trigger: f, start: 'top 95%', end: 'top 35%', scrub: true }
+    } : {
+      clipPath: 'inset(0% 0% 0% 0%)', ease: E, duration: 1.2, clearProps: 'clipPath',
+      scrollTrigger: { trigger: f, start: 'top 90%', once: true }
     });
   });
 
@@ -375,8 +397,10 @@
     gsap.from('.ph-row > *', { y: 30, opacity: 0, duration: 1.2, ease: E, stagger: .1, delay: .35 });
     gsap.fromTo('.ph-media', { clipPath: 'inset(18% 6% 0% 6%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.8, ease: 'expo.inOut', delay: .3 });
   }
-  gsap.from('.site-header > *', { y: -24, opacity: 0, duration: 1.1, ease: E, stagger: .07, delay: .2 });
-  gsap.from('.dock', { y: 40, opacity: 0, duration: 1.1, ease: E, delay: .6 });
+  // clearProps hands the transform back to the CSS afterwards (the phone dock is centred with translateX(-50%))
+  gsap.from('.site-header > *', { y: -24, opacity: 0, duration: 1.1, ease: E, stagger: .07, delay: .2, clearProps: 'transform,opacity' });
+  var dockKids = document.querySelectorAll('.dock > *');
+  if (dockKids.length) gsap.from(dockKids, { y: 40, opacity: 0, duration: 1.1, ease: E, delay: .6, stagger: .05, clearProps: 'transform,opacity' });
 
   /* ---------- home hero: phumdi circle opens to the whole screen ---------- */
   var stage = document.querySelector('.hero-stage');
