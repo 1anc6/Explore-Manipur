@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Manipur quiz | Explore Manipur</title>
+  <meta name="description" content="Ten questions on Manipur’s lakes, dances, food, sport and festivals. See your score and try to beat it.">
+  <meta name="theme-color" content="#2b1a2b">
+  <meta property="og:title" content="Manipur quiz | Explore Manipur">
+  <meta property="og:description" content="Ten questions on Manipur’s lakes, dances, food, sport and festivals. See your score and try to beat it.">
+  <meta property="og:image" content="assets/photos/loktak-home-m.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232b1a2b'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23f0b44c'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <nav class="hdr-nav left" aria-label="Explore">
+    <a href="places.html">Places</a>
+    <a href="culture.html">Culture</a>
+    <a href="cuisine.html">Cuisine</a>
+  </nav>
+  <a href="index.html" class="logo" aria-label="Explore Manipur, home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" fill="currentColor"/></svg>
+    <span>Explore Manipur</span>
+  </a>
+  <nav class="hdr-nav right" aria-label="More">
+    <a href="sports.html">Sports</a>
+    <a href="quiz.html" aria-current="page">Quiz</a>
+    <a href="plan.html">Plan a trip</a>
+  </nav>
+</header>
+
+<div class="dock">
+  <a href="places.html" class="dock-pill">
+    <span>Destinations</span>
+    <svg viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="3" height="3"/><rect x="8" y="1" width="3" height="3"/><rect x="1" y="8" width="3" height="3"/><rect x="8" y="8" width="3" height="3"/></svg>
+  </a>
+  <button class="dock-menu" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</div>
+
+<nav class="menu" id="menu" aria-label="Main" aria-hidden="true">
+  <div class="menu-inner">
+    <ul class="menu-links">
+      <li><a href="index.html">Home</a></li><li><a href="places.html">Places</a></li><li><a href="culture.html">Culture</a></li><li><a href="cuisine.html">Cuisine</a></li><li><a href="sports.html">Sports</a></li><li><a href="plan.html">Plan your trip</a></li><li><a href="quiz.html" aria-current="page">Quiz</a></li>
+    </ul>
+    <div class="menu-aside">
+      <figure><img src="assets/photos/loktak-sunset-m.jpg" srcset="assets/photos/loktak-sunset-m.jpg 1000w, assets/photos/loktak-sunset.jpg 1920w" sizes="30vw" width="1000" height="563" alt="Sunset over Loktak Lake" loading="lazy" decoding="async"></figure>
+      <p><strong>Imphal now</strong><span data-imphal-time>…</span> · India Standard Time</p>
+      <p><strong>Best season</strong>October to April; May for the Shirui lily</p>
+      <p><strong>Permits</strong><a class="link-line" href="https://manipurilponline.mn.gov.in/" target="_blank" rel="noopener">Apply for an Inner Line Permit</a></p>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section class="ph">
+    <h1 class="ph-title">Quiz</h1>
+    <div class="ph-row">
+      <p class="lead">Ten questions on lakes, dances, food, sport and festivals. Each answer comes with the story behind it, and your best score is kept on this device.</p>
+      <div class="ph-actions"><a class="btn" href="#quiz">Start the quiz <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+    </div>
+    <figure class="ph-media" data-parallax="8"><img src="assets/photos/loktak-fishing-m.jpg" srcset="assets/photos/loktak-fishing-m.jpg 1000w, assets/photos/loktak-fishing.jpg 1920w" sizes="100vw" width="1000" height="664" alt="Fishers in narrow boats on Loktak Lake" fetchpriority="high" decoding="async"></figure>
+  </section>
+  <section class="dark sec quiz-sec" aria-labelledby="quiz-h">
+    <h2 class="sr-only" id="quiz-h">The quiz</h2>
+    <div class="quiz" id="quiz">
+      <div data-body>
+        <p class="quiz-q" data-q>Loading the quiz…</p>
+        <ol class="quiz-a" data-a></ol>
+        <p class="quiz-fb" data-fb aria-live="polite"></p>
+        <button class="btn" type="button" data-next hidden>Next question</button>
+        <div class="quiz-top"><div class="quiz-bar"><span data-bar></span></div><p data-prog>Question 1 of 10</p></div>
+      </div>
+      <div class="quiz-result" data-result hidden>
+        <p class="quiz-score" data-score>0/10</p>
+        <p class="lead" data-verdict></p>
+        <p class="muted" data-best></p>
+        <div class="plan-actions">
+          <button class="btn" type="button" data-restart>Try again</button>
+          <button class="btn ghost" type="button" data-share>Share my score</button>
+        </div>
+      </div>
+      <noscript><p>The quiz needs JavaScript. Explore the <a href="places.html">places</a> and <a href="culture.html">culture</a> pages to learn the answers.</p></noscript>
+    </div>
+    <figure class="quiz-fig"><img src="assets/photos/phumdi-aerial-m.jpg" srcset="assets/photos/phumdi-aerial-m.jpg 750w, assets/photos/phumdi-aerial.jpg 1500w" sizes="(max-width: 900px) 100vw, 40vw" width="750" height="1000" alt="A photograph from Manipur that goes with the question" loading="lazy" decoding="async"></figure>
+  </section>
+
+  <section class="light sec" aria-labelledby="learn-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="learn-h">Find the answers</h2>
+      <p class="lead">Every question comes from these pages. Read up, then try again for ten out of ten.</p>
+    </div>
+    <div class="mosaic" data-stagger="60">
+      <a class="tile" href="places.html"><figure><img src="assets/photos/sendra-m.jpg" srcset="assets/photos/sendra-m.jpg 1000w, assets/photos/sendra.jpg 1920w" sizes="(max-width: 900px) 50vw, 25vw" width="1000" height="561" alt="Sendra island in Loktak Lake" loading="lazy" decoding="async"></figure><h3>Places</h3><p>Lakes, forts, hills and the floating park.</p></a>
+      <a class="tile" href="culture.html"><figure><img src="assets/photos/raas-leela-m.jpg" srcset="assets/photos/raas-leela-m.jpg 1000w, assets/photos/raas-leela.jpg 1920w" sizes="(max-width: 900px) 50vw, 25vw" width="1000" height="648" alt="Ras Leela dancers in mirror-work skirts" loading="lazy" decoding="async"></figure><h3>Culture</h3><p>Dance, festivals, crafts and peoples.</p></a>
+      <a class="tile" href="cuisine.html"><figure><img src="assets/photos/eromba-m.jpg" srcset="assets/photos/eromba-m.jpg 1000w, assets/photos/eromba.jpg 1920w" sizes="(max-width: 900px) 50vw, 25vw" width="1000" height="748" alt="Ingredients for eromba" loading="lazy" decoding="async"></figure><h3>Cuisine</h3><p>Ngari, king chilli and black rice.</p></a>
+      <a class="tile" href="sports.html"><figure><img src="assets/photos/polo-match-m.jpg" srcset="assets/photos/polo-match-m.jpg 1000w, assets/photos/polo-match.jpg 1920w" sizes="(max-width: 900px) 50vw, 25vw" width="1000" height="750" alt="A polo match in Imphal" loading="lazy" decoding="async"></figure><h3>Sports</h3><p>Polo, Thang-Ta and champions.</p></a>
+    </div>
+  </section>
+
+  <a class="up-next" href="plan.html">
+    <div class="next-vp"><img src="assets/photos/ukhrul-hills-m.jpg" srcset="assets/photos/ukhrul-hills-m.jpg 1000w, assets/photos/ukhrul-hills.jpg 1920w" sizes="100vw" width="1000" height="668" alt="" loading="lazy" decoding="async"></div>
+    <div class="next-scrim"></div>
+    <div class="next-content">
+      <h2 class="next-title">Plan your trip</h2>
+      <p class="next-desc">Next: Build an itinerary, check the weather and pack</p>
+    </div>
+  </a>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-grid">
+    <h2>Khurumjari. Welcome to Manipur.</h2>
+    <nav aria-label="Pages">
+      <a href="places.html">Places</a><a href="culture.html">Culture</a><a href="cuisine.html">Cuisine</a><a href="sports.html">Sports</a>
+    </nav>
+    <nav aria-label="Trip">
+      <a href="plan.html">Plan your trip</a><a href="quiz.html">Quiz</a><a href="credits.html">Photo credits</a><a href="#top">Back to top</a>
+    </nav>
+  </div>
+  <p class="foot-name" aria-hidden="true">Explore Manipur</p>
+  <p class="credits">Photographs by Wikimedia Commons contributors under Creative Commons licences, and from the Explore Manipur project. <a href="credits.html">See every credit</a>.</p>
+  <p class="credits">© <span data-year>2026</span> Explore Manipur, a student project about Manipur's people, places and culture. Check official sources before you travel.</p>
+</footer>
+
+<div class="float-img" aria-hidden="true"><img alt=""></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/features.js" defer></script>
+</body>
+</html>

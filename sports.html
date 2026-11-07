@@ -1,132 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Explore Manipur – Sports</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sports in Manipur | Explore Manipur</title>
+  <meta name="description" content="The birthplace of modern polo, the martial art of Thang-Ta, traditional games like Yubi Lakpi and Mukna, and champions such as Mary Kom and Mirabai Chanu.">
+  <meta name="theme-color" content="#2b1a2b">
+  <meta property="og:title" content="Sports in Manipur | Explore Manipur">
+  <meta property="og:description" content="The birthplace of modern polo, the martial art of Thang-Ta, traditional games like Yubi Lakpi and Mukna, and champions such as Mary Kom and Mirabai Chanu.">
+  <meta property="og:image" content="assets/photos/loktak-home-m.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232b1a2b'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23f0b44c'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="dark home-page">
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="brand">
-            EXPLORE MANIPUR
-            <span>Culture • Cuisine • Journeys</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="culture.html">Culture</a></li>
-            <li><a href="cuisine.html">Cuisine</a></li>
-            <li><a href="places.html">Places</a></li>
-            <li><a href="sports.html" class="active">Sports</a></li>
-            <li><a href="interactive.html">FAQ</a></li>
-        </ul>
+<header class="site-header" id="top">
+  <nav class="hdr-nav left" aria-label="Explore">
+    <a href="places.html">Places</a>
+    <a href="culture.html">Culture</a>
+    <a href="cuisine.html">Cuisine</a>
+  </nav>
+  <a href="index.html" class="logo" aria-label="Explore Manipur, home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" fill="currentColor"/></svg>
+    <span>Explore Manipur</span>
+  </a>
+  <nav class="hdr-nav right" aria-label="More">
+    <a href="sports.html" aria-current="page">Sports</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="plan.html">Plan a trip</a>
+  </nav>
+</header>
+
+<div class="dock">
+  <a href="places.html" class="dock-pill">
+    <span>Destinations</span>
+    <svg viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="3" height="3"/><rect x="8" y="1" width="3" height="3"/><rect x="1" y="8" width="3" height="3"/><rect x="8" y="8" width="3" height="3"/></svg>
+  </a>
+  <button class="dock-menu" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</div>
+
+<nav class="menu" id="menu" aria-label="Main" aria-hidden="true">
+  <div class="menu-inner">
+    <ul class="menu-links">
+      <li><a href="index.html">Home</a></li><li><a href="places.html">Places</a></li><li><a href="culture.html">Culture</a></li><li><a href="cuisine.html">Cuisine</a></li><li><a href="sports.html" aria-current="page">Sports</a></li><li><a href="plan.html">Plan your trip</a></li><li><a href="quiz.html">Quiz</a></li>
+    </ul>
+    <div class="menu-aside">
+      <figure><img src="assets/photos/loktak-sunset-m.jpg" srcset="assets/photos/loktak-sunset-m.jpg 1000w, assets/photos/loktak-sunset.jpg 1920w" sizes="30vw" width="1000" height="563" alt="Sunset over Loktak Lake" loading="lazy" decoding="async"></figure>
+      <p><strong>Imphal now</strong><span data-imphal-time>…</span> · India Standard Time</p>
+      <p><strong>Best season</strong>October to April; May for the Shirui lily</p>
+      <p><strong>Permits</strong><a class="link-line" href="https://manipurilponline.mn.gov.in/" target="_blank" rel="noopener">Apply for an Inner Line Permit</a></p>
     </div>
+  </div>
 </nav>
 
-<main>
-    <!-- Hero / intro section -->
-    <section class="section">
-        <header class="section-header">
-            <h1 class="section-title">Sports &amp; Games of Manipur</h1>
-            <p class="section-subtitle">
-                From ancient polo fields to modern stadiums, Manipur has a sporting spirit
-                that’s far bigger than its size.
-            </p>
-        </header>
+<main id="main">
 
-        <div class="culture-row">
-            <!-- Polo -->
-            <article class="photo-card"
-                     style="background-image: url('polo.jpg');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Polo (Sagol Kangjei)</div>
-                    <div class="photo-card-tagline">
-                        The traditional horseback game believed to be one of the earliest
-                        forms of modern polo.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Sagol Kangjei</span>
-                        <span class="photo-chip">Ponies</span>
-                        <span class="photo-chip">Heritage sport</span>
-                    </div>
-                </div>
-            </article>
+  <section class="ph">
+    <h1 class="ph-title">Sports</h1>
+    <div class="ph-row">
+      <p class="lead">Manipur gave the world polo and gives India more than its share of champions. Sport here is history, festival and everyday life at once.</p>
+      <div class="ph-actions"><a class="btn" href="#champions">Meet the champions <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+    </div>
+    <figure class="ph-media" data-parallax="8"><img src="assets/photos/polo-1875-m.jpg" srcset="assets/photos/polo-1875-m.jpg 1000w, assets/photos/polo-1875.jpg 1920w" sizes="100vw" width="1000" height="766" alt="Manipuri polo players in turbans with their ponies, photographed in 1875" fetchpriority="high" decoding="async"></figure>
+  </section>
+  <section class="light sec" aria-labelledby="polo-h"><h2 class="sr-only" id="polo-h">Polo and football</h2><div class="rows"><article class="row"><figure class="row-fig" data-reveal data-parallax="6"><img src="assets/photos/polo-match-m.jpg" srcset="assets/photos/polo-match-m.jpg 1000w, assets/photos/polo-match.jpg 1920w" sizes="(max-width: 900px) 100vw, 50vw" width="1000" height="750" alt="A polo match on a green ground in Imphal" loading="lazy" decoding="async"></figure><div class="row-copy"><h3 class="split">Sagol Kangjei</h3><p>The game the British called polo has been played in Manipur for centuries, on small, sure-footed Manipuri ponies. Officers stationed in the region learned it in the 1850s and carried it to Calcutta, then the world.</p><p>Imphal still hosts tournaments, and the Manipuri pony is protected as a breed of its own.</p></div></article><article class="row"><figure class="row-fig" data-reveal data-parallax="6"><img src="assets/photos/kangjeibung-m.jpg" srcset="assets/photos/kangjeibung-m.jpg 1000w, assets/photos/kangjeibung.jpg 1920w" sizes="(max-width: 900px) 100vw, 50vw" width="1000" height="748" alt="The open polo ground of Manung Kangjeibung inside Kangla Fort" loading="lazy" decoding="async"></figure><div class="row-copy"><h3 class="split">Grounds of kings</h3><p>Manung Kangjeibung, inside Kangla, was the polo ground of the royal court. Mapal Kangjeibung in central Imphal is counted among the oldest polo grounds still in use anywhere.</p></div></article><article class="row"><figure class="row-fig" data-reveal data-parallax="6"><img src="assets/photos/football-m.jpg" srcset="assets/photos/football-m.jpg 1000w, assets/photos/football.jpg 1280w" sizes="(max-width: 900px) 100vw, 50vw" width="1000" height="563" alt="A football match under floodlights in Imphal" loading="lazy" decoding="async"></figure><div class="row-copy"><h3 class="split">Football country</h3><p>Football is played on every open field. Manipur sends players to the national team and to clubs across India, and local league matches draw loud, loyal crowds.</p></div></article></div></section>
+  <section class="warm sec" aria-labelledby="games-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="games-h">Traditional games</h2>
+      <p class="lead">Many are played at Yaoshang and at harvest, and some only at certain festivals.</p>
+    </div>
+    <ol class="list">
+      <li class="list-item" data-img="assets/photos/polo-match-m.jpg"><span class="list-when">On horseback</span><h3>Sagol Kangjei</h3><p>Polo, played seven a side in its traditional form.</p></li>
+      <li class="list-item" data-img="assets/photos/yaoshang-m.jpg"><span class="list-when">Team game</span><h3>Yubi Lakpi</h3><p>A greased coconut is carried through the opposing side, a little like rugby.</p></li>
+      <li class="list-item" data-img="assets/photos/attire-m.jpg"><span class="list-when">Wrestling</span><h3>Mukna</h3><p>Manipuri wrestling, with holds on the belt; matches end when a back touches the ground.</p></li>
+      <li class="list-item" data-img="assets/photos/loktak-fishing-m.jpg"><span class="list-when">On water</span><h3>Hiyang Tannaba</h3><p>Long-boat races rowed in the moats of Kangla and Bijoy Govinda.</p></li>
+      <li class="list-item" data-img="assets/photos/thang-ta-m.jpg"><span class="list-when">Martial art</span><h3>Thang-Ta</h3><p>Sword and spear, taught in academies and performed on stage.</p></li>
+    </ol>
+  </section>
 
-            <!-- Football -->
-            <article class="photo-card"
-                     style="background-image: url('football.jpg');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Football</div>
-                    <div class="photo-card-tagline">
-                        Street grounds, school leagues, and clubs that turn evenings into
-                        loud, muddy matches.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Local clubs</span>
-                        <span class="photo-chip">Youth leagues</span>
-                    </div>
-                </div>
-            </article>
+  <section class="dark sec" id="champions" aria-labelledby="ch-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="ch-h">A state of champions</h2>
+      <p class="lead">For a state of about three million people, Manipur has won a remarkable share of India’s medals.</p>
+    </div>
+    <div class="champs" data-stagger="40">
+      <article class="panel"><h3>M. C. Mary Kom</h3><p>Boxing. Six-time world amateur champion and Olympic bronze medallist at London 2012.</p></article>
+      <article class="panel"><h3>Saikhom Mirabai Chanu</h3><p>Weightlifting. Olympic silver at Tokyo 2020 and world champion in 2017.</p></article>
+      <article class="panel"><h3>Ngangom Dingko Singh</h3><p>Boxing. Asian Games gold in Bangkok, 1998, an inspiration for a generation.</p></article>
+      <article class="panel"><h3>Laishram Sarita Devi</h3><p>Boxing. World champion in 2006 and Asian champion several times.</p></article>
+      <article class="panel"><h3>N. Kunjarani Devi</h3><p>Weightlifting. A string of world championship medals and Commonwealth gold in 2006.</p></article>
+      <article class="panel"><h3>Sushila Chanu</h3><p>Hockey. Captain of India’s women’s team at the Rio 2016 Olympics.</p></article>
+    </div>
+  </section>
 
-            <!-- Boxing / Mary Kom -->
-            <article class="photo-card"
-                     style="background-image: url('boxing.jpg');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Boxing &amp; Combat Sports</div>
-                    <div class="photo-card-tagline">
-                        Home of champions like Mary Kom, with academies training the next
-                        generation of boxers.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Boxing</span>
-                        <span class="photo-chip">Olympians</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Thang Ta -->
-            <article class="photo-card"
-                     style="background-image: url('thang_ta.jpg');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Thang-Ta</div>
-                    <div class="photo-card-tagline">
-                        Traditional martial art of sword and spear, practised as both
-                        discipline and performance.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Martial art</span>
-                        <span class="photo-chip">Weapon drills</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Stadiums & Training -->
-            <article class="photo-card"
-                     style="background-image: url('stadium.jpg');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Fields &amp; Stadiums</div>
-                    <div class="photo-card-tagline">
-                        Local grounds, boxing halls, and training centres keeping sports
-                        a part of daily life.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Training</span>
-                        <span class="photo-chip">Tournaments</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    
+  <section class="band" aria-label="Match day in Imphal">
+    <div class="band-vp" data-parallax="12"><img src="assets/photos/stadium-m.jpg" srcset="assets/photos/stadium-m.jpg 1000w, assets/photos/stadium.jpg 1280w" sizes="100vw" width="1000" height="683" alt="A packed stadium in Imphal during a match" loading="lazy" decoding="async"></div>
+    <p class="band-cap">Match day in Imphal</p>
+  </section>
+  <a class="up-next" href="plan.html">
+    <div class="next-vp"><img src="assets/photos/ukhrul-hills-m.jpg" srcset="assets/photos/ukhrul-hills-m.jpg 1000w, assets/photos/ukhrul-hills.jpg 1920w" sizes="100vw" width="1000" height="668" alt="" loading="lazy" decoding="async"></div>
+    <div class="next-scrim"></div>
+    <div class="next-content">
+      <h2 class="next-title">Plan your trip</h2>
+      <p class="next-desc">Next: Build an itinerary, check the weather and pack</p>
+    </div>
+  </a>
 </main>
 
-<footer>
-    Sports in Manipur reflect discipline, heritage, and resilience —
-        from ancient games to modern champions.
+<footer class="site-footer">
+  <div class="foot-grid">
+    <h2>Khurumjari. Welcome to Manipur.</h2>
+    <nav aria-label="Pages">
+      <a href="places.html">Places</a><a href="culture.html">Culture</a><a href="cuisine.html">Cuisine</a><a href="sports.html">Sports</a>
+    </nav>
+    <nav aria-label="Trip">
+      <a href="plan.html">Plan your trip</a><a href="quiz.html">Quiz</a><a href="credits.html">Photo credits</a><a href="#top">Back to top</a>
+    </nav>
+  </div>
+  <p class="foot-name" aria-hidden="true">Explore Manipur</p>
+  <p class="credits">Photographs by Wikimedia Commons contributors under Creative Commons licences, and from the Explore Manipur project. <a href="credits.html">See every credit</a>.</p>
+  <p class="credits">© <span data-year>2026</span> Explore Manipur, a student project about Manipur's people, places and culture. Check official sources before you travel.</p>
 </footer>
 
-<script src="script.js"></script>
+<div class="float-img" aria-hidden="true"><img alt=""></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/features.js" defer></script>
 </body>
 </html>

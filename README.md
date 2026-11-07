@@ -1,58 +1,42 @@
-# Explore Manipur 🌿
+# Explore Manipur
 
-**Explore Manipur** is a student-built mini web portal that showcases the rich culture, traditional cuisine, sports heritage, and beautiful tourist places of Manipur.
+**Explore Manipur** is a student-built travel site about Manipur: its places, culture, food and sport, with tools for planning a visit.
 
-This project is created as part of an academic assignment using **HTML, CSS, and basic JavaScript**, focusing on clean design, smooth animations, and structured content.
+It is plain HTML, CSS and JavaScript with no build step. Motion comes from GSAP, ScrollTrigger and Lenis, and the map from Leaflet with OpenStreetMap tiles, all loaded from public CDNs. Every page stays readable without JavaScript or with reduced motion turned on.
 
----
+## Pages
 
-## 🌏 About the Project
+| Page | What is on it |
+| --- | --- |
+| `index.html` | Home. Loktak's round phumdi opens into a full-screen photo as you scroll. Destinations slider, Grimwood quote, live Imphal weather, local time, a Sangai Festival countdown, festivals, food |
+| `places.html` | Interactive map of 14 places, filters, and a detail view for each place (time needed, best season, how to get there, OpenStreetMap link) |
+| `culture.html` | Ras Leela, Lai Haraoba, Sankirtana, Thang-Ta, crafts, a full festival calendar, Manipur's peoples |
+| `cuisine.html` | Flavours, dishes with a vegetarian, fish, sweet and snack filter, a singju recipe, where to eat |
+| `sports.html` | Polo's birthplace, traditional games, Manipur's champions |
+| `plan.html` | Trip planner (3, 5 or 7 days, by interest; copy or email the plan), live weather, permits and travel essentials, seasons, Meiteilon phrases, a packing list that remembers your ticks |
+| `quiz.html` | A 10-question quiz with a photo for each question; your best score is kept |
+| `credits.html` | Credit and licence for every photograph |
 
-Manipur, known as the *Jewel of the Hills*, has a deep cultural identity rooted in dance, music, martial arts, food, and sports.  
-This website brings all these aspects together in a simple, visually rich, and user-friendly way.
+## Files
 
----
+```
+assets/css/main.css      all styles
+assets/js/core.js        scrolling, menu, sliders, filters, lightbox, animation
+assets/js/features.js    map, planner, weather, clock, countdown, packing list, quiz
+assets/photos/           photos: name.jpg (large) and name-m.jpg (phone size)
+assets/src/credits.json  source, author and licence for each downloaded photo
+```
 
-## 📂 Pages Included
+## Run it locally
 
-- **Home (`index.html`)**  
-  Overview of Manipur with visual highlights
+```bash
+python -m http.server 5517
+```
 
-- **Culture (`culture.html`)**  
-  Ras Leela, Lai Haraoba, traditional attire, music, and Thang-Ta
+Then open http://localhost:5517.
 
-- **Cuisine (`cuisine.html`)**  
-  Local dishes, ingredients, and food traditions
+## Notes
 
-- **Places (`places.html`)**  
-  Loktak Lake, Kangla Fort, Ima Keithel, hills, and valleys
-
-- **Sports (`sports.html`)**  
-  Polo (Sagol Kangjei), boxing, football, martial arts, and training culture
-
-- **Interactive / FAQ (`interactive.html`)**  
-  Simple quiz and interactive learning section
-
----
-
-## 🛠️ Technologies Used
-
-- **HTML5** – page structure  
-- **CSS3** – layout, animations, and responsiveness  
-- **JavaScript (basic)** – interactivity  
-- **Responsive Design** – works on desktop and mobile  
-
----
-
-## ✨ Features
-
-- Smooth hover animations for cards  
-- Dark-themed, modern UI  
-- Consistent layout across all pages  
-- Page-specific content and footers  
-- Clean, semantic HTML structure  
-
----
-
-## 📁 Folder Structure
-
+- Live weather comes from Open-Meteo (no key needed). When it can't be reached, the page shows typical temperatures for the month instead.
+- Festival dates follow the lunar calendar and change every year. The Sangai Festival usually runs from 21 to 30 November.
+- Photographs come from Wikimedia Commons and Openverse under Creative Commons licences (see `credits.html`). A few come from the original project.

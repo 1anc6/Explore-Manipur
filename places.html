@@ -1,142 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Explore Manipur – Places to Visit</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Places to visit in Manipur | Explore Manipur</title>
+  <meta name="description" content="An interactive map and guide to fourteen places in Manipur: Loktak Lake, Keibul Lamjao, Kangla Fort, Ima Keithel, Ukhrul, Dzükou and more.">
+  <meta name="theme-color" content="#2b1a2b">
+  <meta property="og:title" content="Places to visit in Manipur | Explore Manipur">
+  <meta property="og:description" content="An interactive map and guide to fourteen places in Manipur: Loktak Lake, Keibul Lamjao, Kangla Fort, Ima Keithel, Ukhrul, Dzükou and more.">
+  <meta property="og:image" content="assets/photos/loktak-home-m.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232b1a2b'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23f0b44c'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="dark home-page">
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="brand">
-            EXPLORE MANIPUR
-            <span>Culture • Cuisine • Journeys</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="culture.html">Culture</a></li>
-            <li><a href="cuisine.html">Cuisine</a></li>
-            <li><a href="places.html" class="active">Places</a></li>
-            <li><a href="sports.html">Sports</a></li>
-            <li><a href="interactive.html">FAQ</a></li>
-        </ul>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <nav class="hdr-nav left" aria-label="Explore">
+    <a href="places.html" aria-current="page">Places</a>
+    <a href="culture.html">Culture</a>
+    <a href="cuisine.html">Cuisine</a>
+  </nav>
+  <a href="index.html" class="logo" aria-label="Explore Manipur, home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" fill="currentColor"/></svg>
+    <span>Explore Manipur</span>
+  </a>
+  <nav class="hdr-nav right" aria-label="More">
+    <a href="sports.html">Sports</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="plan.html">Plan a trip</a>
+  </nav>
+</header>
+
+<div class="dock">
+  <a href="places.html" class="dock-pill">
+    <span>Destinations</span>
+    <svg viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="3" height="3"/><rect x="8" y="1" width="3" height="3"/><rect x="1" y="8" width="3" height="3"/><rect x="8" y="8" width="3" height="3"/></svg>
+  </a>
+  <button class="dock-menu" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</div>
+
+<nav class="menu" id="menu" aria-label="Main" aria-hidden="true">
+  <div class="menu-inner">
+    <ul class="menu-links">
+      <li><a href="index.html">Home</a></li><li><a href="places.html" aria-current="page">Places</a></li><li><a href="culture.html">Culture</a></li><li><a href="cuisine.html">Cuisine</a></li><li><a href="sports.html">Sports</a></li><li><a href="plan.html">Plan your trip</a></li><li><a href="quiz.html">Quiz</a></li>
+    </ul>
+    <div class="menu-aside">
+      <figure><img src="assets/photos/loktak-sunset-m.jpg" srcset="assets/photos/loktak-sunset-m.jpg 1000w, assets/photos/loktak-sunset.jpg 1920w" sizes="30vw" width="1000" height="563" alt="Sunset over Loktak Lake" loading="lazy" decoding="async"></figure>
+      <p><strong>Imphal now</strong><span data-imphal-time>…</span> · India Standard Time</p>
+      <p><strong>Best season</strong>October to April; May for the Shirui lily</p>
+      <p><strong>Permits</strong><a class="link-line" href="https://manipurilponline.mn.gov.in/" target="_blank" rel="noopener">Apply for an Inner Line Permit</a></p>
     </div>
+  </div>
 </nav>
 
-<main>
-    <section class="section">
-        <header class="section-header">
-            <h1 class="section-title">Places to Visit</h1>
-            <p class="section-subtitle">
-                From floating lakes to ancient forts and busy markets, each place tells a quieter side of Manipur.
-            </p>
-        </header>
+<main id="main">
 
-        <div class="culture-row">
-            <!-- Loktak Lake -->
-            <article class="photo-card"
-                     style="background-image: url('loktak.png');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Loktak Lake</div>
-                    <div class="photo-card-tagline">
-                        The largest freshwater lake in Northeast India.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Boat rides</span>
-                        <span class="photo-chip">Sunrise</span>
-                        <span class="photo-chip">Nature</span>
-                    </div>
-                </div>
-            </article>
+  <section class="ph">
+    <h1 class="ph-title">Places</h1>
+    <div class="ph-row">
+      <p class="lead">Fourteen places across the valley and the hills, from the floating park on Loktak to the peak where the Shirui lily grows.</p>
+      <div class="ph-actions"><a class="btn" href="#map-sec">Open the map <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn ghost" href="plan.html#planner">Plan a route</a></div>
+    </div>
+    <figure class="ph-media" data-parallax="8"><img src="assets/photos/loktak-boats-m.jpg" srcset="assets/photos/loktak-boats-m.jpg 1000w, assets/photos/loktak-boats.jpg 2880w" sizes="100vw" width="1000" height="664" alt="Fishing boats and floating phumdis on Loktak Lake with hills behind" fetchpriority="high" decoding="async"></figure>
+  </section>
+  <section class="light sec" id="map-sec" aria-labelledby="map-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="map-h">Find your way</h2>
+      <p class="lead">Tap a place to fly to it. Most of the valley is within two hours of Imphal; the hills need a night or two.</p>
+    </div>
+    <div class="map-wrap">
+      <div id="map" class="map" role="region" aria-label="Map of places in Manipur">
+        <p class="map-fallback">The interactive map needs an internet connection. Every place is listed alongside and below.</p>
+      </div>
+      <div class="map-side">
+        <ul class="map-list">
+          <li><button type="button" data-place="kangla" aria-pressed="false"><strong>Kangla Fort</strong><span>Imphal West</span></button></li><li><button type="button" data-place="ima" aria-pressed="false"><strong>Ima Keithel</strong><span>Khwairamband, Imphal</span></button></li><li><button type="button" data-place="govindajee" aria-pressed="false"><strong>Shree Govindajee Temple</strong><span>Imphal East</span></button></li><li><button type="button" data-place="polo" aria-pressed="false"><strong>Polo grounds of Imphal</strong><span>Imphal</span></button></li><li><button type="button" data-place="loktak" aria-pressed="false"><strong>Loktak Lake & Sendra</strong><span>Bishnupur district, 45 km south of Imphal</span></button></li><li><button type="button" data-place="keibul" aria-pressed="false"><strong>Keibul Lamjao National Park</strong><span>Bishnupur district, 53 km south of Imphal</span></button></li><li><button type="button" data-place="moirang" aria-pressed="false"><strong>INA Memorial, Moirang</strong><span>Moirang, Bishnupur district</span></button></li><li><button type="button" data-place="kakching" aria-pressed="false"><strong>Kakching Garden</strong><span>Kakching, 44 km south-east of Imphal</span></button></li><li><button type="button" data-place="ukhrul" aria-pressed="false"><strong>Ukhrul</strong><span>Ukhrul district, about 83 km north-east of Imphal</span></button></li><li><button type="button" data-place="shirui" aria-pressed="false"><strong>Shirui Kashung</strong><span>Ukhrul district</span></button></li><li><button type="button" data-place="longpi" aria-pressed="false"><strong>Longpi (Nungbi)</strong><span>Ukhrul district</span></button></li><li><button type="button" data-place="dzukou" aria-pressed="false"><strong>Dzükou Valley</strong><span>Senapati district, on the Nagaland border</span></button></li><li><button type="button" data-place="pakhangba" aria-pressed="false"><strong>Pakhangba Temple</strong><span>Kangla, Imphal</span></button></li><li><button type="button" data-place="thoubal" aria-pressed="false"><strong>Thoubal & Khongjom</strong><span>Thoubal district, 36 km south-east of Imphal</span></button></li>
+        </ul>
+        <button type="button" class="btn ghost" id="map-reset">Show all places</button>
+      </div>
+    </div>
+  </section>
 
-            <!-- Keibul Lamjao National Park -->
-            <article class="photo-card"
-                     style="background-image: url('keibul_lamjao.jpg');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Keibul Lamjao National Park</div>
-                    <div class="photo-card-tagline">
-                        The world’s only floating national park, home to the endangered Sangai deer.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Wildlife</span>
-                        <span class="photo-chip">Floating park</span>
-                        <span class="photo-chip">Sangai</span>
-                    </div>
-                </div>
-            </article>
+  <section class="warm sec" id="places" aria-labelledby="pl-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="pl-h">Every place, up close</h2>
+      <p class="lead">Filter by what you love, then open a place for the time it takes, when to go and how to get there.</p>
+    </div>
+    <div class="filter-bar">
+      <div class="chips" data-filter-group="#place-grid" data-count="#place-count" role="group" aria-label="Filter places">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="imphal" aria-pressed="false">In Imphal</button>
+        <button class="chip" data-filter="heritage" aria-pressed="false">Heritage</button>
+        <button class="chip" data-filter="nature" aria-pressed="false">Nature</button>
+        <button class="chip" data-filter="culture" aria-pressed="false">Culture</button>
+        <button class="chip" data-filter="adventure" aria-pressed="false">Adventure</button>
+      </div>
+      <p id="place-count" aria-live="polite">14 places</p>
+    </div>
+    <div class="mosaic three" id="place-grid">
+      <a class="tile" href="#kangla" id="kangla" data-lb data-tags="heritage imphal" data-meta="Imphal West" data-text="For centuries the seat of Manipur’s kings, Kangla stands within moats on the west bank of the Imphal River. Walk past the white Kangla Sha dragons, the ruins of old temples and the coronation grounds, then sit under the great trees by the water." data-facts="Time needed::2–3 hours|Best time::Mornings, October to March|Getting there::Central Imphal, a short auto-rickshaw ride from anywhere in the city" data-full="assets/photos/kangla.jpg" data-lat="24.8077" data-lng="93.944"><figure><img src="assets/photos/kangla-m.jpg" srcset="assets/photos/kangla-m.jpg 1000w, assets/photos/kangla.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="White Kangla Sha statues before the gate of Kangla Fort" loading="lazy" decoding="async"></figure><h3>Kangla Fort</h3><p>Imphal West</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#ima" id="ima" data-lb data-tags="culture food imphal" data-meta="Khwairamband, Imphal" data-text="The Mothers’ Market fills three large halls in the middle of Imphal. Every stall is kept by a woman: fish, handloom phanek, spices, fermented ngari, fresh herbs and the black rice for chak-hao kheer." data-facts="Time needed::1–2 hours|Best time::Mornings, when the fish arrives|Tip::Ask before taking photographs of the traders" data-full="assets/photos/ima-vendor.jpg" data-lat="24.8086" data-lng="93.9371"><figure><img src="assets/photos/ima-vendor-m.jpg" srcset="assets/photos/ima-vendor-m.jpg 1000w, assets/photos/ima-vendor.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="A trader at Ima Keithel selling rice" loading="lazy" decoding="async"></figure><h3>Ima Keithel</h3><p>Khwairamband, Imphal</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#govindajee" id="govindajee" data-lb data-tags="heritage culture imphal" data-meta="Imphal East" data-text="The twin golden domes of the Govindajee temple rise beside the old royal palace. Come at aarti time to hear the drums and cymbals of the sankirtan, the devotional singing of the Meitei Vaishnavs." data-facts="Time needed::1 hour|Best time::Morning or evening aarti|Etiquette::Dress modestly; shoes off before entering" data-full="assets/photos/govindajee.jpg" data-lat="24.7966" data-lng="93.9447"><figure><img src="assets/photos/govindajee-m.jpg" srcset="assets/photos/govindajee-m.jpg 1000w, assets/photos/govindajee.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="664" alt="The golden twin-domed Shree Govindajee Temple" loading="lazy" decoding="async"></figure><h3>Shree Govindajee Temple</h3><p>Imphal East</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#polo" id="polo" data-lb data-tags="sport heritage imphal" data-meta="Imphal" data-text="Polo has been played in Imphal for centuries. The royal Manung Kangjeibung lies inside Kangla, and the public Mapal Kangjeibung is counted among the oldest polo grounds still in use anywhere." data-facts="Time needed::1 hour, or an afternoon of matches|Best time::Tournaments are often held around the Sangai Festival|Look for::The small, hardy Manipuri pony" data-full="assets/photos/kangjeibung.jpg" data-lat="24.8094" data-lng="93.9409"><figure><img src="assets/photos/kangjeibung-m.jpg" srcset="assets/photos/kangjeibung-m.jpg 1000w, assets/photos/kangjeibung.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="748" alt="The open green polo ground of Manung Kangjeibung inside Kangla" loading="lazy" decoding="async"></figure><h3>Polo grounds of Imphal</h3><p>Imphal</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#loktak" id="loktak" data-lb data-tags="nature water" data-meta="Bishnupur district, 45 km south of Imphal" data-text="North-East India’s largest freshwater lake is strewn with phumdis, floating rings of grass where fishers build their huts. Climb Sendra island for the view, then take a boat between the islands." data-facts="Time needed::Half a day, or overnight in a homestay|Best time::October to March|Getting there::Shared taxi or car via Moirang, about 1.5 hours" data-full="assets/photos/sendra.jpg" data-lat="24.518" data-lng="93.785"><figure><img src="assets/photos/sendra-m.jpg" srcset="assets/photos/sendra-m.jpg 1000w, assets/photos/sendra.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="561" alt="Sendra island in Loktak Lake under a blue sky" loading="lazy" decoding="async"></figure><h3>Loktak Lake & Sendra</h3><p>Bishnupur district, 45 km south of Imphal</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#keibul" id="keibul" data-lb data-tags="nature wildlife water" data-meta="Bishnupur district, 53 km south of Imphal" data-text="About 40 km² of floating marsh at the southern end of Loktak, and the only place in the wild where the Sangai, Manipur’s dancing deer, survives. Watch from the towers at dawn or dusk." data-facts="Time needed::Half a day|Best time::Dawn or dusk, November to April|Tip::Bring binoculars and keep quiet near the towers" data-full="assets/photos/sangai.jpg" data-lat="24.496" data-lng="93.827"><figure><img src="assets/photos/sangai-m.jpg" srcset="assets/photos/sangai-m.jpg 665w, assets/photos/sangai.jpg 1330w" sizes="(max-width: 900px) 50vw, 33vw" width="665" height="1000" alt="A Sangai deer standing in tall grass" loading="lazy" decoding="async"></figure><h3>Keibul Lamjao National Park</h3><p>Bishnupur district, 53 km south of Imphal</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#moirang" id="moirang" data-lb data-tags="heritage" data-meta="Moirang, Bishnupur district" data-text="On 14 April 1944 the Indian National Army raised its flag at Moirang, its first on Indian soil. A memorial and a small museum of letters, photographs and uniforms tell the story." data-facts="Time needed::1 hour|Combine with::Loktak Lake and Keibul Lamjao on the same day" data-full="assets/photos/ina-memorial.jpg" data-lat="24.5003" data-lng="93.773"><figure><img src="assets/photos/ina-memorial-m.jpg" srcset="assets/photos/ina-memorial-m.jpg 1000w, assets/photos/ina-memorial.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="750" alt="The INA Memorial pillar at Moirang" loading="lazy" decoding="async"></figure><h3>INA Memorial, Moirang</h3><p>Moirang, Bishnupur district</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#kakching" id="kakching" data-lb data-tags="nature" data-meta="Kakching, 44 km south-east of Imphal" data-text="A hillside garden of clipped hedges, ponds and flowering terraces on Uyok Ching, with views across the paddy fields of the southern valley." data-facts="Time needed::2 hours|Best time::Late afternoon, for the light over the fields" data-full="assets/photos/kakching.jpg" data-lat="24.497" data-lng="93.995"><figure><img src="assets/photos/kakching-m.jpg" srcset="assets/photos/kakching-m.jpg 1000w, assets/photos/kakching.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="748" alt="Terraced gardens of Kakching Garden with clipped hedges" loading="lazy" decoding="async"></figure><h3>Kakching Garden</h3><p>Kakching, 44 km south-east of Imphal</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#ukhrul" id="ukhrul" data-lb data-tags="nature adventure culture" data-meta="Ukhrul district, about 83 km north-east of Imphal" data-text="The hill town of the Tangkhul Naga people sits on a ridge of pine and cloud. Stay in a homestay, walk to the viewpoints and eat smoked pork with bamboo shoot." data-facts="Time needed::2 days|Best time::October to May|Getting there::About 3 hours by road from Imphal" data-full="assets/photos/ukhrul.jpg" data-lat="25.11" data-lng="94.36"><figure><img src="assets/photos/ukhrul-m.jpg" srcset="assets/photos/ukhrul-m.jpg 1000w, assets/photos/ukhrul.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="Ukhrul town spread across a green ridge" loading="lazy" decoding="async"></figure><h3>Ukhrul</h3><p>Ukhrul district, about 83 km north-east of Imphal</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#shirui" id="shirui" data-lb data-tags="nature adventure" data-meta="Ukhrul district" data-text="The sacred peak above Shirui village is the only place in the world where the Shirui lily grows wild. The trail climbs through grassland to wide views over the ranges." data-facts="Time needed::A full day from Ukhrul|Best time::May and June for the lily|Tip::Hire a local guide in Shirui village" data-full="assets/photos/shirui-hills.jpg" data-lat="25.11" data-lng="94.44"><figure><img src="assets/photos/shirui-hills-m.jpg" srcset="assets/photos/shirui-hills-m.jpg 1000w, assets/photos/shirui-hills.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="665" alt="Grassy slopes of Shirui Kashung with a lone tree" loading="lazy" decoding="async"></figure><h3>Shirui Kashung</h3><p>Ukhrul district</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#longpi" id="longpi" data-lb data-tags="craft culture" data-meta="Ukhrul district" data-text="Longpi potters shape black cooking pots by hand from crushed serpentine rock and clay, without a wheel, then fire them and polish them with leaves." data-facts="Time needed::1–2 hours|Combine with::The drive to Ukhrul|Bring home::A kettle, a casserole or a pan" data-full="assets/photos/longpi-set.jpg" data-lat="25.058" data-lng="94.308"><figure><img src="assets/photos/longpi-set-m.jpg" srcset="assets/photos/longpi-set-m.jpg 1000w, assets/photos/longpi-set.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="750" alt="Black Longpi cooking pots with cane handles" loading="lazy" decoding="async"></figure><h3>Longpi (Nungbi)</h3><p>Ukhrul district</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#dzukou" id="dzukou" data-lb data-tags="nature adventure" data-meta="Senapati district, on the Nagaland border" data-text="A high valley of rolling grass and dwarf bamboo, crossed by streams and filled with lilies in early summer. The trek takes two to three days with a guide." data-facts="Time needed::2–3 days|Best time::June to September for flowers; October for clear skies|Permits::Check rules for the Nagaland side" data-full="assets/photos/dzukou.jpg" data-lat="25.553" data-lng="94.088"><figure><img src="assets/photos/dzukou-m.jpg" srcset="assets/photos/dzukou-m.jpg 1000w, assets/photos/dzukou.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="665" alt="The grass-covered folds of the Dzükou Valley" loading="lazy" decoding="async"></figure><h3>Dzükou Valley</h3><p>Senapati district, on the Nagaland border</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#pakhangba" id="pakhangba" data-lb data-tags="heritage culture imphal" data-meta="Kangla, Imphal" data-text="A white tiered temple inside Kangla dedicated to Pakhangba, the dragon-god of the Meitei, whose coiled form appears across Manipuri art." data-facts="Time needed::30 minutes|Combine with::Kangla Fort" data-full="assets/photos/pakhangba.jpg" data-lat="24.807" data-lng="93.9425"><figure><img src="assets/photos/pakhangba-m.jpg" srcset="assets/photos/pakhangba-m.jpg 1000w, assets/photos/pakhangba.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="750" alt="The white Pakhangba temple at Kangla" loading="lazy" decoding="async"></figure><h3>Pakhangba Temple</h3><p>Kangla, Imphal</p><span class="tag">Open details</span></a>
+      <a class="tile" href="#thoubal" id="thoubal" data-lb data-tags="heritage nature" data-meta="Thoubal district, 36 km south-east of Imphal" data-text="Flat paddy country and lotus ponds lead to Khongjom, where the last battle of the 1891 Anglo-Manipur War is remembered every April with a memorial day." data-facts="Time needed::Half a day|Combine with::Kakching Garden" data-full="assets/photos/thoubal.jpg" data-lat="24.442" data-lng="94.004"><figure><img src="assets/photos/thoubal-m.jpg" srcset="assets/photos/thoubal-m.jpg 1000w, assets/photos/thoubal.jpg 1920w" sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="664" alt="Paddy fields and hills near Thoubal" loading="lazy" decoding="async"></figure><h3>Thoubal & Khongjom</h3><p>Thoubal district, 36 km south-east of Imphal</p><span class="tag">Open details</span></a>
+    </div>
+  </section>
 
-            <!-- Kangla Fort -->
-            <article class="photo-card"
-                     style="background-image: url('kangla.jpg');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Kangla Fort</div>
-                    <div class="photo-card-tagline">
-                        Historic fort complex in Imphal, reflecting the region’s royal and colonial past.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">History</span>
-                        <span class="photo-chip">Architecture</span>
-                        <span class="photo-chip">Evening walks</span>
-                    </div>
-                </div>
-            </article>
+  <section class="band" aria-label="Loktak’s phumdis, seen from the air on the way into Imphal">
+    <div class="band-vp" data-parallax="12"><img src="assets/photos/phumdi-aerial-m.jpg" srcset="assets/photos/phumdi-aerial-m.jpg 750w, assets/photos/phumdi-aerial.jpg 1500w" sizes="100vw" width="750" height="1000" alt="Aerial view of phumdis on Loktak Lake from a plane window" loading="lazy" decoding="async"></div>
+    <p class="band-cap">Loktak’s phumdis, seen from the air on the way into Imphal</p>
+  </section>
+  <section class="light sec" aria-labelledby="dt-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="dt-h">Day trips from Imphal</h2>
+      <p class="lead">Distances by road from the city centre. Hire a car with a driver for the day, or take shared taxis from Khwairamband.</p>
+    </div>
+    <ol class="list">
+      <li class="list-item" data-img="assets/photos/sendra-m.jpg"><span class="list-when">45 km</span><h3>Loktak & Moirang</h3><p>Sendra viewpoint, a boat among the phumdis and the INA Memorial.</p></li>
+      <li class="list-item" data-img="assets/photos/sangai-m.jpg"><span class="list-when">53 km</span><h3>Keibul Lamjao</h3><p>Go late in the day for the best chance of seeing the Sangai.</p></li>
+      <li class="list-item" data-img="assets/photos/longpi-pot-m.jpg"><span class="list-when">26 km</span><h3>Andro village</h3><p>Hand-built pottery, a cultural complex and the Panam Ningthou sacred site.</p></li>
+      <li class="list-item" data-img="assets/photos/kakching-m.jpg"><span class="list-when">44 km</span><h3>Kakching Garden</h3><p>Terraced gardens on Uyok Ching hill above the paddy fields.</p></li>
+      <li class="list-item" data-img="assets/photos/thoubal-m.jpg"><span class="list-when">36 km</span><h3>Khongjom</h3><p>The memorial to the last battle of the 1891 Anglo-Manipur War.</p></li>
+    </ol>
+  </section>
 
-            <!-- Ima Keithel -->
-            <article class="photo-card"
-                     style="background-image: url('ima_keithel.png');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Ima Keithel (Mother’s Market)</div>
-                    <div class="photo-card-tagline">
-                        A market run entirely by women, filled with local produce, textiles, and daily essentials.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Market</span>
-                        <span class="photo-chip">Women-led</span>
-                        <span class="photo-chip">Shopping</span>
-                    </div>
-                </div>
-            </article>
+  <div class="lb" role="dialog" aria-modal="true" aria-label="Place details" aria-hidden="true">
+    <figure><img alt=""></figure>
+    <div class="lb-body">
+      <p class="meta"></p>
+      <h2></h2>
+      <p class="lb-text"></p>
+      <dl></dl>
+      <a class="link-line lb-link" href="#" target="_blank" rel="noopener">Open in OpenStreetMap</a>
+      <div class="lb-nav">
+        <button class="arrow lb-prev" aria-label="Previous place"><svg viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+        <button class="arrow lb-next" aria-label="Next place"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <button class="lb-close" aria-label="Close">×</button>
+  </div>
 
-            <!-- Hill Districts & Valleys -->
-            <article class="photo-card"
-                     style="background-image: url('hill.png');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Hill Districts &amp; Valleys</div>
-                    <div class="photo-card-tagline">
-                        Ukhrul, Tamenglong and other hill regions offer trekking, waterfalls, and quiet villages.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Trekking</span>
-                        <span class="photo-chip">Waterfalls</span>
-                        <span class="photo-chip">Scenery</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Border Towns -->
-            <article class="photo-card"
-                     style="background-image: url('moreh.png');">
-                <div class="photo-card-content">
-                    <div class="photo-card-title">Border Towns &amp; Beyond</div>
-                    <div class="photo-card-tagline">
-                        Towns like Moreh open up trade and travel routes towards neighbouring countries.
-                    </div>
-                    <div class="photo-chip-row">
-                        <span class="photo-chip">Border town</span>
-                        <span class="photo-chip">Trade</span>
-                        <span class="photo-chip">Routes</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
+  <a class="up-next" href="culture.html">
+    <div class="next-vp"><img src="assets/photos/raas-leela-m.jpg" srcset="assets/photos/raas-leela-m.jpg 1000w, assets/photos/raas-leela.jpg 1920w" sizes="100vw" width="1000" height="648" alt="" loading="lazy" decoding="async"></div>
+    <div class="next-scrim"></div>
+    <div class="next-content">
+      <h2 class="next-title">Culture</h2>
+      <p class="next-desc">Next: Ras Leela, Lai Haraoba, Thang-Ta and the art of the phanek</p>
+    </div>
+  </a>
 </main>
 
-<footer>
-   From floating lakes to hill towns, Manipur’s places offer calm beauty
-        and quiet stories.
+<footer class="site-footer">
+  <div class="foot-grid">
+    <h2>Khurumjari. Welcome to Manipur.</h2>
+    <nav aria-label="Pages">
+      <a href="places.html">Places</a><a href="culture.html">Culture</a><a href="cuisine.html">Cuisine</a><a href="sports.html">Sports</a>
+    </nav>
+    <nav aria-label="Trip">
+      <a href="plan.html">Plan your trip</a><a href="quiz.html">Quiz</a><a href="credits.html">Photo credits</a><a href="#top">Back to top</a>
+    </nav>
+  </div>
+  <p class="foot-name" aria-hidden="true">Explore Manipur</p>
+  <p class="credits">Photographs by Wikimedia Commons contributors under Creative Commons licences, and from the Explore Manipur project. <a href="credits.html">See every credit</a>.</p>
+  <p class="credits">© <span data-year>2026</span> Explore Manipur, a student project about Manipur's people, places and culture. Check official sources before you travel.</p>
 </footer>
 
-<script src="script.js"></script>
+<div class="float-img" aria-hidden="true"><img alt=""></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/features.js" defer></script>
 </body>
 </html>

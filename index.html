@@ -1,182 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Explore Manipur – Home</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Explore Manipur | The jewel of India’s North-East</title>
+  <meta name="description" content="Floating lakes, sacred dances, the world’s oldest polo grounds and a market run by women. Plan your journey to Manipur.">
+  <meta name="theme-color" content="#2b1a2b">
+  <meta property="og:title" content="Explore Manipur | The jewel of India’s North-East">
+  <meta property="og:description" content="Floating lakes, sacred dances, the world’s oldest polo grounds and a market run by women. Plan your journey to Manipur.">
+  <meta property="og:image" content="assets/photos/loktak-home-m.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232b1a2b'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23f0b44c'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="dark home-page">
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="brand">
-            EXPLORE MANIPUR
-            <span>Culture • Cuisine • Journeys</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="culture.html">Culture</a></li>
-            <li><a href="cuisine.html">Cuisine</a></li>
-            <li><a href="places.html">Places</a></li>
-            <li><a href="sports.html">Sports</a></li>
-            <li><a href="interactive.html">FAQ</a></li>
-        </ul>
+<header class="site-header" id="top">
+  <nav class="hdr-nav left" aria-label="Explore">
+    <a href="places.html">Places</a>
+    <a href="culture.html">Culture</a>
+    <a href="cuisine.html">Cuisine</a>
+  </nav>
+  <a href="index.html" class="logo" aria-label="Explore Manipur, home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" fill="currentColor"/></svg>
+    <span>Explore Manipur</span>
+  </a>
+  <nav class="hdr-nav right" aria-label="More">
+    <a href="sports.html">Sports</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="plan.html">Plan a trip</a>
+  </nav>
+</header>
+
+<div class="dock">
+  <a href="places.html" class="dock-pill">
+    <span>Destinations</span>
+    <svg viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="3" height="3"/><rect x="8" y="1" width="3" height="3"/><rect x="1" y="8" width="3" height="3"/><rect x="8" y="8" width="3" height="3"/></svg>
+  </a>
+  <button class="dock-menu" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</div>
+
+<nav class="menu" id="menu" aria-label="Main" aria-hidden="true">
+  <div class="menu-inner">
+    <ul class="menu-links">
+      <li><a href="index.html" aria-current="page">Home</a></li><li><a href="places.html">Places</a></li><li><a href="culture.html">Culture</a></li><li><a href="cuisine.html">Cuisine</a></li><li><a href="sports.html">Sports</a></li><li><a href="plan.html">Plan your trip</a></li><li><a href="quiz.html">Quiz</a></li>
+    </ul>
+    <div class="menu-aside">
+      <figure><img src="assets/photos/loktak-sunset-m.jpg" srcset="assets/photos/loktak-sunset-m.jpg 1000w, assets/photos/loktak-sunset.jpg 1920w" sizes="30vw" width="1000" height="563" alt="Sunset over Loktak Lake" loading="lazy" decoding="async"></figure>
+      <p><strong>Imphal now</strong><span data-imphal-time>…</span> · India Standard Time</p>
+      <p><strong>Best season</strong>October to April; May for the Shirui lily</p>
+      <p><strong>Permits</strong><a class="link-line" href="https://manipurilponline.mn.gov.in/" target="_blank" rel="noopener">Apply for an Inner Line Permit</a></p>
     </div>
+  </div>
 </nav>
 
-<main>
-    <section class="section">
-        <div class="hero">
-            <div class="hero-text">
-                <h1>Manipur, the jewel in the hills.</h1>
-                <p>
-                    A land of floating lakes, sacred dances, and food that feels like home.
-                    This mini-portal brings together the culture, traditions, cuisines, and
-                    travel spots of Manipur in one place for you to explore.
-                </p>
-                <div class="hero-cta">
-                    <a href="culture.html" class="btn-primary">Start with culture →</a>
-                    <a href="interactive.html" class="btn-ghost">Test your knowledge</a>
-                </div>
-            </div>
-        <div class="home-row">
-            <article class="photo-card"
-             style="background-image: url('imphal.png');">
-            <div class="photo-card-content">
-                <div class="photo-card-title">Imphal</div>
-                <div class="photo-card-tagline">• Capital City Of Manipur.</div>
-            </div>
-        </div>
+<main id="main">
+
+  <div class="hero-stage">
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track"><span>Explore Manipur</span><span>Explore Manipur</span><span>Explore Manipur</span><span>Explore Manipur</span></div>
+      </div>
+      <figure class="hero-media"><img src="assets/photos/loktak-home-m.jpg" srcset="assets/photos/loktak-home-m.jpg 1000w, assets/photos/loktak-home.jpg 2880w" sizes="100vw" width="1000" height="664" alt="A fisher’s hut on a round floating phumdi in Loktak Lake, hills behind" fetchpriority="high" decoding="async"></figure>
+      <div class="hero-copy">
+        <h1>Manipur, the jewel of India’s North-East</h1>
+        <p>Floating lakes, sacred dances and hills wrapped in cloud.</p>
+      </div>
+      <div class="hero-cap">
+        <span class="scrim" aria-hidden="true"></span>
+        <p>A fisher’s hut on a floating phumdi, Loktak Lake.</p>
+        <a class="btn" href="places.html">See all places <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </div>
     </section>
+  </div>
 
-<!-- photo grid -->
-
-<section class="section">
-    <header class="section-header">
-        <h2 class="section-title">Visual glimpses of Manipur</h2>
-        <p class="section-subtitle">
-            A few frames where lakes, markets, and dances steal the light.
-        </p>
-    </header>
-<div class="photo-grid">
-        <article class="photo-card"
-                 style="background-image: url('loktak.png');">
-            <div class="photo-card-content">
-                <div class="photo-card-title">Loktak Lake</div>
-                <div class="photo-card-tagline">
-                    Morning mist, floating phumdis, and quiet boats.
-                </div>
-                <div class="photo-chip-row">
-                    <span class="photo-chip">Floating lake</span>
-                    <span class="photo-chip">Sunrise</span>
-                </div>
-            </div>
-        </article>
-
-        <article class="photo-card"
-                 style="background-image: url('ras_leela.png');">
-            <div class="photo-card-content">
-                <div class="photo-card-title">Ras Leela</div>
-                <div class="photo-card-tagline">
-                    Circular motion, soft steps, and stories of devotion.
-                </div>
-                <div class="photo-chip-row">
-                    <span class="photo-chip">Dance</span>
-                    <span class="photo-chip">Tradition</span>
-                </div>
-            </div>
-        </article>
-
-        <article class="photo-card"
-                 style="background-image: url('ima_keithel.png');">
-            <div class="photo-card-content">
-                <div class="photo-card-title">Ima Keithel</div>
-                <div class="photo-card-tagline">
-                    Mothers, markets, and everyday city heartbeat.
-                </div>
-                <div class="photo-chip-row">
-                    <span class="photo-chip">Market</span>
-                    <span class="photo-chip">Women-led</span>
-                </div>
-            </div>
-        </article>
-
-        <article class="photo-card"
-                 style="background-image: url('hill.png');">
-            <div class="photo-card-content">
-                <div class="photo-card-title">Hill horizons</div>
-                <div class="photo-card-tagline">
-                    Long roads, green ridges, and slow-changing skies.
-                </div>
-                <div class="photo-chip-row">
-                    <span class="photo-chip">Hills</span>
-                    <span class="photo-chip">Road trips</span>
-                </div>
-            </div>
-        </article>
+  <section class="light sec" id="destinations" aria-labelledby="dest-h">
+    <div class="intro-grid">
+      <h2 class="t-xl split" id="dest-h">Where lakes float,<br>hills sing</h2>
+      <p class="lead split">An oval valley ringed by nine hill ranges on the Myanmar border, with floating islands, living temples, all-women markets and the game the world now calls polo.</p>
     </div>
-</section>
-    <section class="section">
-        <header class="section-header">
-            <h2 class="section-title">What you’ll find here</h2>
-            <p class="section-subtitle">Three simple sections that open up one state’s whole story.</p>
-        </header>
-        
-        <div class="photo-grid">
-        
-        <article class="photo-card"
-                 style="background-image: url('dance.jpg');">
-            <div class="photo-card-content">
-                <div class="photo-card-title">Culture &amp; Traditions</div>
-                <div class="photo-card-tagline">
-                    Dive into Ras Leela, Lai Haraoba, traditional attire, and the everyday customs
-                    that quietly shape life in Manipur.
-                </div>
-                <div class="photo-chip-row">
-                    <span class="photo-chip">Dance</span>
-                    <span class="photo-chip">Music</span>
-                </div>
-            </div>
-        </article>
-
-        <article class="photo-card"
-                 style="background-image: url('food.jpg');">
-            <div class="photo-card-content">
-                <div class="photo-card-title">Cuisines</div>
-                <div class="photo-card-tagline">
-                    From simple, soulful Kangshoi to spicy Eromba, explore dishes that mix hills,
-                    herbs, and homegrown ingredients.
-                </div>
-                <div class="photo-chip-row">
-                    <span class="photo-chip">Local ingredients</span>
-                    <span class="photo-chip">Comfort food</span>
-                </div>
-            </div>
-        </article>
-
-        <article class="photo-card"
-                 style="background-image: url('flower.jpg');">
-            <div class="photo-card-content">
-                <div class="photo-card-title">Tourist spots</div>
-                <div class="photo-card-tagline">
-                    Lakes, markets, hills, and heritage sites—get an overview of places that make
-                    Manipur a quiet but unforgettable destination.
-                </div>
-                <div class="photo-chip-row">
-                    <span class="photo-chip">Hills</span>
-                    <span class="photo-chip">Road trips</span>
-                </div>
-            </div>
-        </article>
+    <div class="slider" aria-roledescription="carousel" aria-label="Destinations">
+      <div class="slider-viewport" tabindex="0">
+        <ul class="slider-track">
+          <li class="slide"><a href="places.html#places"><figure><img src="assets/photos/sendra-m.jpg" srcset="assets/photos/sendra-m.jpg 1000w, assets/photos/sendra.jpg 1920w" sizes="(max-width: 640px) 80vw, 34vw" width="1000" height="561" alt="Sendra island rising from Loktak Lake" loading="lazy" decoding="async"></figure><h3>Loktak Lake</h3><p>North-East India’s largest freshwater lake, scattered with floating phumdis.</p></a></li>
+          <li class="slide"><a href="places.html#places"><figure><img src="assets/photos/sangai-m.jpg" srcset="assets/photos/sangai-m.jpg 665w, assets/photos/sangai.jpg 1330w" sizes="(max-width: 640px) 80vw, 34vw" width="665" height="1000" alt="A Sangai deer in tall grass at Keibul Lamjao" loading="lazy" decoding="async"></figure><h3>Keibul Lamjao</h3><p>The world’s only floating national park and the last home of the Sangai.</p></a></li>
+          <li class="slide"><a href="places.html#places"><figure><img src="assets/photos/kangla-m.jpg" srcset="assets/photos/kangla-m.jpg 1000w, assets/photos/kangla.jpg 1920w" sizes="(max-width: 640px) 80vw, 34vw" width="1000" height="667" alt="White Kangla Sha dragon statues at the gate of Kangla Fort" loading="lazy" decoding="async"></figure><h3>Kangla Fort</h3><p>The old seat of Manipur’s kings, guarded by its white Kangla Sha.</p></a></li>
+          <li class="slide"><a href="places.html#places"><figure><img src="assets/photos/ima-vendor-m.jpg" srcset="assets/photos/ima-vendor-m.jpg 1000w, assets/photos/ima-vendor.jpg 1920w" sizes="(max-width: 640px) 80vw, 34vw" width="1000" height="667" alt="A woman trader selling black and sticky rice at Ima Keithel" loading="lazy" decoding="async"></figure><h3>Ima Keithel</h3><p>The Mothers’ Market: thousands of stalls, each one run by a woman.</p></a></li>
+          <li class="slide"><a href="places.html#places"><figure><img src="assets/photos/dzukou-m.jpg" srcset="assets/photos/dzukou-m.jpg 1000w, assets/photos/dzukou.jpg 1920w" sizes="(max-width: 640px) 80vw, 34vw" width="1000" height="665" alt="Green folded hills of the Dzükou Valley under cloud" loading="lazy" decoding="async"></figure><h3>Dzükou Valley</h3><p>Grass-covered folds on the border with Nagaland, best walked in early summer.</p></a></li>
+          <li class="slide"><a href="places.html#places"><figure><img src="assets/photos/shirui-lily-m.jpg" srcset="assets/photos/shirui-lily-m.jpg 1000w, assets/photos/shirui-lily.jpg 1920w" sizes="(max-width: 640px) 80vw, 34vw" width="1000" height="854" alt="A pink Shirui lily bud among green leaves" loading="lazy" decoding="async"></figure><h3>Shirui Kashung</h3><p>Ukhrul’s sacred peak, the only place the Shirui lily grows wild.</p></a></li>
+          <li class="slide"><a href="places.html#places"><figure><img src="assets/photos/ukhrul-m.jpg" srcset="assets/photos/ukhrul-m.jpg 1000w, assets/photos/ukhrul.jpg 1920w" sizes="(max-width: 640px) 80vw, 34vw" width="1000" height="667" alt="Houses of Ukhrul town spread across a green ridge" loading="lazy" decoding="async"></figure><h3>Ukhrul</h3><p>Tangkhul Naga hill country, three hours from Imphal.</p></a></li>
+        </ul>
+      </div>
+      <div class="slider-nav">
+        <button class="arrow arrow-prev" aria-label="Previous destination"><svg viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+        <button class="arrow arrow-next" aria-label="Next destination"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </div>
     </div>
-    </section>
+  </section>
+
+  <section class="light sec" style="padding-top:0" aria-labelledby="q-h">
+    <div class="big-marquee" aria-hidden="true"><div class="big-marquee-track"><span>Jewel of India</span><span>Jewel of India</span><span>Jewel of India</span><span>Jewel of India</span></div></div>
+    <h2 class="sr-only" id="q-h">What visitors have said</h2>
+    <div class="quote">
+      <figure class="quote-fig" data-reveal><img src="assets/photos/ras-stage-m.jpg" srcset="assets/photos/ras-stage-m.jpg 1000w, assets/photos/ras-stage.jpg 1920w" sizes="(max-width: 900px) 100vw, 40vw" width="1000" height="665" alt="Manipuri dancers in mirror-work potloi skirts on stage" loading="lazy" decoding="async"></figure>
+      <blockquote>
+        <p class="split">“A pretty place, more beautiful than many show places of the world.”</p>
+        <footer><strong>Ethel St Clair Grimwood</strong>My Three Years in Manipur, 1891</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Dzükou Valley, on the Manipur–Nagaland border">
+    <div class="band-vp" data-parallax="12"><img src="assets/photos/dzukou-wide-m.jpg" srcset="assets/photos/dzukou-wide-m.jpg 1000w, assets/photos/dzukou-wide.jpg 2880w" sizes="100vw" width="1000" height="677" alt="The grassy folds of the Dzükou Valley under a blue sky" loading="lazy" decoding="async"></div>
+    <p class="band-cap">Dzükou Valley, on the Manipur–Nagaland border</p>
+  </section>
+  <section class="light sec" aria-labelledby="why-h"><h2 class="sr-only" id="why-h">Why Manipur</h2><div class="rows"><article class="row"><figure class="row-fig" data-reveal data-parallax="6"><img src="assets/photos/keibul-m.jpg" srcset="assets/photos/keibul-m.jpg 1000w, assets/photos/keibul.jpg 1920w" sizes="(max-width: 900px) 100vw, 50vw" width="1000" height="750" alt="Floating grass islands of Keibul Lamjao on open water" loading="lazy" decoding="async"></figure><div class="row-copy"><h3 class="split">40 km² that float</h3><p>Keibul Lamjao rests on phumdis, mats of soil and plants drifting on Loktak Lake. It is the world’s only floating national park and the last wild home of the endangered Sangai deer.</p></div></article><article class="row"><figure class="row-fig" data-reveal data-parallax="6"><img src="assets/photos/ima-vendor-m.jpg" srcset="assets/photos/ima-vendor-m.jpg 1000w, assets/photos/ima-vendor.jpg 1920w" sizes="(max-width: 900px) 100vw, 50vw" width="1000" height="667" alt="A trader at Ima Keithel with baskets of rice" loading="lazy" decoding="async"></figure><div class="row-copy"><h3 class="split">A market run by mothers</h3><p>In the heart of Imphal, Ima Keithel is one of the largest all-women markets in Asia. Thousands of imas trade fish, handloom and spices, as their mothers did before them.</p></div></article><article class="row"><figure class="row-fig" data-reveal data-parallax="6"><img src="assets/photos/polo-1875-m.jpg" srcset="assets/photos/polo-1875-m.jpg 1000w, assets/photos/polo-1875.jpg 1920w" sizes="(max-width: 900px) 100vw, 50vw" width="1000" height="766" alt="Manipuri polo players with their ponies, photographed in 1875" loading="lazy" decoding="async"></figure><div class="row-copy"><h3 class="split">Where polo was born</h3><p>Modern polo grew from Sagol Kangjei, played on Manipuri ponies. British officers learned it here in the 1850s, and Imphal’s Mapal Kangjeibung is counted among the oldest polo grounds in the world.</p></div></article><article class="row"><figure class="row-fig" data-reveal data-parallax="6"><img src="assets/photos/raas-leela-m.jpg" srcset="assets/photos/raas-leela-m.jpg 1000w, assets/photos/raas-leela.jpg 1920w" sizes="(max-width: 900px) 100vw, 50vw" width="1000" height="648" alt="Ras Leela dancers in traditional attire" loading="lazy" decoding="async"></figure><div class="row-copy"><h3 class="split">A classical dance of India</h3><p>Manipuri Ras Leela is one of India’s classical dance forms: slow, devotional and luminous, danced in barrel-shaped potloi skirts that glitter with mirror-work.</p></div></article></div></section>
+  <section class="dark sec" aria-labelledby="now-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="now-h">Imphal, right now</h2>
+      <p class="lead">Live weather and local time in the capital, and how long until the Sangai Festival opens.</p>
+    </div>
+    <div class="now-grid">
+      <div class="now-card" data-weather>
+        <p class="now-big" data-wx-temp>…</p>
+        <p class="now-label">Weather in Imphal</p>
+        <p data-wx-desc>Loading the latest forecast…</p>
+        <ul class="wx-days" data-wx-days></ul>
+      </div>
+      <div class="now-card">
+        <p class="now-big" data-imphal-time>…</p>
+        <p class="now-label">Local time</p>
+        <p>Manipur runs on India Standard Time (UTC+5:30). The sun rises early here, around 5 a.m. in summer.</p>
+      </div>
+      <div class="now-card accent" data-sangai>
+        <p class="now-big" data-sangai-num>…</p>
+        <p class="now-label">Sangai Festival</p>
+        <p data-sangai-label>The festival usually runs from 21 to 30 November in Imphal.</p>
+        <a class="link-line" href="plan.html">Plan around it</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="warm sec" aria-labelledby="fest-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="fest-h">A year of festivals</h2>
+      <p class="lead">Manipur’s calendar follows the moon, the harvest and the gods. Time your visit with one of these; exact dates change each year.</p>
+    </div>
+    <ol class="list"><li class="list-item" data-img="assets/photos/yaoshang-m.jpg"><span class="list-when">Feb – Mar</span><h3>Yaoshang</h3><p>Five days of colour, bonfires, sport and the Thabal Chongba moonlight dance.</p></li><li class="list-item" data-img="assets/photos/lai-haraoba-m.jpg"><span class="list-when">Apr – May</span><h3>Lai Haraoba</h3><p>The "merrymaking of the gods", with maibi priestesses re-enacting creation in dance.</p></li><li class="list-item" data-img="assets/photos/shirui-lily-m.jpg"><span class="list-when">May</span><h3>Shirui Lily Festival</h3><p>Ukhrul celebrates its state flower with music and Tangkhul Naga culture.</p></li><li class="list-item" data-img="assets/photos/nungba-m.jpg"><span class="list-when">1 November</span><h3>Kut</h3><p>The harvest festival of the Kuki-Chin-Mizo peoples: songs, dances and thanksgiving.</p></li><li class="list-item" data-img="assets/photos/sangai-m.jpg"><span class="list-when">21 – 30 Nov</span><h3>Sangai Festival</h3><p>The state’s biggest showcase of crafts, cuisine, sport and performance.</p></li></ol>
+  </section>
+
+  <section class="light sec" aria-labelledby="food-h">
+    <div class="sec-head">
+      <h2 class="t-xl split" id="food-h">On the plate</h2>
+      <p class="lead">Sharp with king chilli, fragrant with herbs and fermented fish, and sweetened with black rice.</p>
+    </div>
+    <div class="mosaic" data-stagger="60">
+      <a class="tile" href="cuisine.html"><figure><img src="assets/photos/eromba-m.jpg" srcset="assets/photos/eromba-m.jpg 1000w, assets/photos/eromba.jpg 1920w" sizes="(max-width: 900px) 50vw, 25vw" width="1000" height="748" alt="Ingredients for eromba: boiled vegetables, chilli and fermented fish" loading="lazy" decoding="async"></figure><h3>Eromba</h3><p>Boiled vegetables mashed with ngari and fiery chilli.</p></a>
+      <a class="tile" href="cuisine.html"><figure><img src="assets/photos/singju-m.jpg" srcset="assets/photos/singju-m.jpg 720w" sizes="(max-width: 900px) 50vw, 25vw" width="720" height="900" alt="Singju salad with fritters" loading="lazy" decoding="async"></figure><h3>Singju</h3><p>A crunchy, spicy salad of lotus stem, cabbage and herbs.</p></a>
+      <a class="tile" href="cuisine.html"><figure><img src="assets/photos/nga-ataoba-m.jpg" srcset="assets/photos/nga-ataoba-m.jpg 748w, assets/photos/nga-ataoba.jpg 1496w" sizes="(max-width: 900px) 50vw, 25vw" width="748" height="1000" alt="Nga ataoba, fish roasted until crisp" loading="lazy" decoding="async"></figure><h3>Nga Ataoba</h3><p>Fish fried or roasted until crisp, a staple of the valley.</p></a>
+      <a class="tile" href="cuisine.html"><figure><img src="assets/photos/chakhao-kheer-m.jpg" srcset="assets/photos/chakhao-kheer-m.jpg 640w" sizes="(max-width: 900px) 50vw, 25vw" width="640" height="800" alt="Purple chak-hao kheer, black rice pudding" loading="lazy" decoding="async"></figure><h3>Chak-hao Kheer</h3><p>Pudding of aromatic black rice, deep purple and nutty.</p></a>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Sunset over Loktak Lake">
+    <div class="band-vp" data-parallax="12"><img src="assets/photos/loktak-sunset-m.jpg" srcset="assets/photos/loktak-sunset-m.jpg 1000w, assets/photos/loktak-sunset.jpg 1920w" sizes="100vw" width="1000" height="563" alt="Pink and orange sunset clouds reflected in Loktak Lake" loading="lazy" decoding="async"></div>
+    <p class="band-cap">Sunset over Loktak Lake</p>
+  </section>
+  <section class="cta dark" aria-labelledby="cta-h">
+    <h2 class="split" id="cta-h">Begin your<br>Manipur story</h2>
+    <p>Build a day-by-day itinerary for the valley and the hills, and see what to pack and which permits you need.</p>
+    <div class="cta-actions">
+      <a class="btn" href="plan.html#planner">Plan my trip <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="btn ghost" href="quiz.html">Take the quiz</a>
+    </div>
+  </section>
+
+  <a class="up-next" href="places.html">
+    <div class="next-vp"><img src="assets/photos/loktak-boats-m.jpg" srcset="assets/photos/loktak-boats-m.jpg 1000w, assets/photos/loktak-boats.jpg 2880w" sizes="100vw" width="1000" height="664" alt="" loading="lazy" decoding="async"></div>
+    <div class="next-scrim"></div>
+    <div class="next-content">
+      <h2 class="next-title">Places</h2>
+      <p class="next-desc">Next: Fourteen places from the floating park to the lily peak</p>
+    </div>
+  </a>
 </main>
 
-<footer>
-    Built as a college project to showcase Manipur’s culture, food, and travel stories.
-    <br>2025
+<footer class="site-footer">
+  <div class="foot-grid">
+    <h2>Khurumjari. Welcome to Manipur.</h2>
+    <nav aria-label="Pages">
+      <a href="places.html">Places</a><a href="culture.html">Culture</a><a href="cuisine.html">Cuisine</a><a href="sports.html">Sports</a>
+    </nav>
+    <nav aria-label="Trip">
+      <a href="plan.html">Plan your trip</a><a href="quiz.html">Quiz</a><a href="credits.html">Photo credits</a><a href="#top">Back to top</a>
+    </nav>
+  </div>
+  <p class="foot-name" aria-hidden="true">Explore Manipur</p>
+  <p class="credits">Photographs by Wikimedia Commons contributors under Creative Commons licences, and from the Explore Manipur project. <a href="credits.html">See every credit</a>.</p>
+  <p class="credits">© <span data-year>2026</span> Explore Manipur, a student project about Manipur's people, places and culture. Check official sources before you travel.</p>
 </footer>
 
-<script src="script.js"></script>
+<div class="float-img" aria-hidden="true"><img alt=""></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/features.js" defer></script>
 </body>
 </html>
